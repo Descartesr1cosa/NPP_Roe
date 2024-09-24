@@ -1,0 +1,246 @@
+#!MC 1410
+$!VarSet |LFDSFN1| = '"output.dat"'
+$!VarSet |LFDSVL1| = '"x" "rho" "u" "v" "w" "Bx" "By" "Bz" "p"'
+$!SETSTYLEBASE FACTORY
+$!PLOTOPTIONS 
+  SUBDIVIDEALLCELLS = NO
+$!GLOBALPAPER 
+  PAPERSIZEINFO
+    {
+    LETTER
+      {
+      WIDTH = 8.5
+      HEIGHT = 11
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+$!PAGE 
+  NAME = 'Untitled'
+  PAPERATTRIBUTES
+    {
+    BACKGROUNDCOLOR = WHITE
+    ISTRANSPARENT = YES
+    ORIENTPORTRAIT = NO
+    SHOWGRID = YES
+    SHOWRULER = NO
+    SHOWPAPER = NO
+    PAPERSIZE = LETTER
+    RULERSPACING = ONEINCH
+    PAPERGRIDSPACING = HALFINCH
+    REGIONINWORKAREA
+      {
+      X1 = 1
+      Y1 = 0.25
+      X2 = 9
+      Y2 = 6.25
+      }
+    }
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|'
+  INITIALPLOTTYPE = XYLINE
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  ASSIGNSTRANDIDS = YES
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|'
+$!REMOVEVAR |LFDSVL1|
+$!REMOVEVAR |LFDSFN1|
+$!ALTERDATA 
+  EQUATION = '{coordinate}={x}/0.3'
+$!ALTERDATA 
+  EQUATION = '{coordinate}={x}'
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  SHOWHEADER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 1
+    Y = 0.25
+    }
+  WIDTH = 8
+  HEIGHT = 6
+$!THREEDAXIS 
+  ASPECTRATIOLIMIT = 25
+  BOXASPECTRATIOLIMIT = 25
+$!PLOTTYPE  = XYLINE
+$!FRAMENAME  = 'Frame 001'
+$!GLOBALTIME 
+  SOLUTIONTIME = 0
+$!DELETELINEMAPS 
+$!ACTIVELINEMAPS  =  [1]
+$!GLOBALLINEPLOT 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+  LEGEND
+    {
+    SHOW = YES
+    TEXTSHAPE
+      {
+      FONTFAMILY = 'Times New Roman'
+      ISBOLD = NO
+      HEIGHT = 4
+      }
+    BOX
+      {
+      BOXTYPE = NONE
+      }
+    XYPOS
+      {
+      X = 60.781
+      Y = 75.402
+      }
+    }
+$!LINEMAP  [1]
+  NAME = 'By-Bz'
+  ASSIGN
+    {
+    ZONE = 1
+    XAXISVAR = 7
+    YAXISVAR = 8
+    }
+  LINES
+    {
+    COLOR = GREEN
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = GREEN
+    FILLCOLOR = RED
+    SIZE = 1.7
+    LINETHICKNESS = 0.4
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYLINEAXIS 
+  AXISMODE = XYDEPENDENT
+  DEPXTOYRATIO = 1
+  GRIDAREA
+    {
+    DRAWBORDER = YES
+    LINETHICKNESS = 0.3
+    }
+$!XYLINEAXIS 
+  XDETAIL 1
+    {
+    RANGEMIN = -1.0013200044631958
+    RANGEMAX = 1.5960825929394011
+    GRSPACING = 0.5
+    TICKS
+      {
+      SHOWONGRIDBORDERMAX = YES
+      LENGTH = 3
+      LINETHICKNESS = 0.1
+      }
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        FONTFAMILY = 'Times New Roman'
+        }
+      }
+    TITLE
+      {
+      TEXTSHAPE
+        {
+        FONTFAMILY = 'Times New Roman'
+        ISBOLD = NO
+        }
+      }
+    AXISLINE
+      {
+      LINETHICKNESS = 0.1
+      }
+    }
+$!XYLINEAXIS 
+  YDETAIL 1
+    {
+    RANGEMIN = -1.0000000000000002
+    RANGEMAX = 0.99999999999999978
+    GRSPACING = 0.5
+    TICKS
+      {
+      SHOWONGRIDBORDERMAX = YES
+      LENGTH = 3
+      LINETHICKNESS = 0.1
+      }
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        FONTFAMILY = 'Times New Roman'
+        }
+      }
+    TITLE
+      {
+      TEXTSHAPE
+        {
+        FONTFAMILY = 'Times New Roman'
+        ISBOLD = NO
+        }
+      }
+    AXISLINE
+      {
+      LINETHICKNESS = 0.1
+      }
+    }
+$!LINEPLOTLAYERS 
+  SHOWSYMBOLS = YES
+$!ATTACHTEXT 
+  ANCHORPOS
+    {
+    X = 72.41410164638513
+    Y = 23.40730136005715
+    }
+  TEXTSHAPE
+    {
+    FONTFAMILY = 'Times'
+    ISBOLD = NO
+    HEIGHT = 16
+    }
+  TEXT = 'Radius = 1.0'
+$!ATTACHGEOM 
+  GEOMTYPE = CIRCLE
+  ANCHORPOS
+    {
+    X = 0.02692932624890387
+    Y = 0.1050618980722107
+    }
+  RAWDATA
+6.66133814775E-016 
+$!ATTACHGEOM 
+  GEOMTYPE = CIRCLE
+  LINEPATTERN = DASHDOT
+  LINETHICKNESS = 0.6
+  RAWDATA
+1 
+$!ATTACHGEOM 
+  ANCHORPOS
+    {
+    X = 0.9001323966312955
+    Y = -0.4583383688609177
+    }
+  COLOR = RED
+  LINETHICKNESS = 0.5
+  ARROWHEADATTACHMENT = ATBEGINNING
+  RAWDATA
+1
+2
+0 0 
+0.30120202899 -0.126430481672 
+$!FRAMECONTROL ACTIVATEBYNUMBER
+  FRAME = 1
+$!SETSTYLEBASE CONFIG
